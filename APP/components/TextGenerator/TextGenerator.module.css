@@ -1,0 +1,47 @@
+.inputSection {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.inputLabel {
+    margin-right: 10px;
+}
+
+.inputBox {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.addButton,
+.getRecipesButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.addButton:hover,
+.getRecipesButton:hover {
+    background-color: #0056b3;
+}
+
+.ingredientsBox {
+    border: 4px solid #a200ff;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #0a040f;
+    /* Purple background color */
+    border-radius: 10px;
+    /* Rounded corners */
+}
+
+.recipe-results .recipe {
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}

@@ -1,0 +1,86 @@
+{
+  "service": [
+    {
+      "title": "Effortless Recipe AI",
+      "desc": "Let Our AI-powered CookBot analyzes your available ingredients and suggests delightful dishes.",
+      "icon": "activity",
+      "delay": 100
+    },
+    {
+      "title": "Your Words, Our Culinary Magic",
+      "desc": "Discover how our AI-powered CookBot transforms your kitchen adventures into delectable dishes.",
+      "icon": "cast",
+      "delay": 100
+    },
+    {
+      "title": "AI-Powered Culinary Adventures",
+      "desc": "From pantry to gourmet delights, our convenient service suggests mouthwatering recipes.",
+      "icon": "map",
+      "delay": 200
+    },
+    {
+      "title": "Seamless Meal Planning",
+      "desc": "Simplify your cooking routine with personalized, easy to follow recipes.",
+      "icon": "loader",
+      "delay": 100
+    },
+    {
+      "title": "Nutritional Insights at Fingertips",
+      "desc": "Stay informed with detailed nutritional information for every recipe.",
+      "icon": "speaker",
+      "delay": 100
+    },
+    {
+      "title": "Discover New Flavors",
+      "desc": "From appetizers to desserts, explore a world of recipes tailored to your taste.",
+      "icon": "loader",
+      "delay": 200
+    }
+  ],
+  "timeline": [
+    {
+      "title": "1.Input Your Ingredients",
+      "desc": "Simply enter the ingredients you have on hand and let our AI do the rest."
+    },
+    {
+      "title": "2.Get Recipe Suggestions",
+      "desc": "Our AI analyzes your ingredients and suggests a variety of delicious recipes."
+    },
+    {
+      "title": "3.Start Cooking",
+      "desc": "Follow the step-by-step instructions to create dishes with ease."
+    }
+  ],
+  "accordion": [
+    {
+      "title": "What is CookBot? How does it work?",
+      "desc": "CookBot is an AI-powered platform that analyzes your available ingredients and suggests delightful dishes. Just input what you have, and our AI will generate personalized recipes for you!",
+      "isExpand": true
+    },
+    {
+      "title": "What kind of recipes can I get?",
+      "desc": "CookBot offers a wide range of recipes, from appetizers to desserts. Whether you're in the mood for something quick and easy or looking to try a new cuisine, we've got you covered.",
+      "isExpand": false
+    },
+    {
+      "title": "Can I trust the nutritional information provided?",
+      "desc": "Yes, CookBot provides accurate nutritional information for every recipe, helping you make informed choices about your meals.",
+      "isExpand": false
+    },
+    {
+      "title": "Is this AI a high school project?",
+      "desc": "Yes, CookBot was developed as part of a high school initiative. We're proud of our student team for creating such a useful tool.",
+      "isExpand": false
+    },
+    {
+      "title": "Is my data safe with CookBot?",
+      "desc": "Absolutely! We prioritize your privacy and ensure that your data is secure and only used to improve your experience.",
+      "isExpand": false
+    },
+    {
+      "title": "Is CookBot available in multiple languages?",
+      "desc": "No, CookBot does not support multiple languages, only English.",
+      "isExpand": false
+    }
+  ]
+}

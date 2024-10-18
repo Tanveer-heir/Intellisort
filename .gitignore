@@ -1,0 +1,4 @@
+*.log
+temp/
+/APP/node_modules
+/APP/.next
