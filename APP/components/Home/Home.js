@@ -27,13 +27,13 @@ const Home = () => {
             <div className="col-lg-12">
               <div className="inner text-center mt--60">
                 <h1 className="title display-one">
-                Unlock the Culinary Magic <br />
-                  With{" "} <span className="theme-gradient">CookBot AI</span>
+                Transform Waste to Wonder <br />
+                  With{" "} <span className="theme-gradient">Intellisort AI</span>
                   <br />
                   <span className="color-off">Smartest AI</span>
                 </h1>
                 <p className="b1 desc-text">
-                 AI-Powered Recipe Recommendations – A Culinary Game Changer
+                 AI-Driven Waste Solutions – A Green Revolution
                 </p>
                 <div className="button-group">
                   <Link
@@ -41,7 +41,7 @@ const Home = () => {
                     href="/text-generator"
                   >
                     <div className="has-bg-light"></div>
-                    <span>Get Cooking!</span>
+                    <span>Let's Clean Up!</span>
                   </Link>
                 </div>
               </div>

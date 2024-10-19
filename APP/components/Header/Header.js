@@ -63,7 +63,7 @@ const Header = ({ headerTransparent, headerSticky, btnClass }) => {
                     className={`btn-default ${btnClass}`}
                     href="/text-generator"
                   >
-                    Get Cooking!
+                    Let's Clean Up!
                   </Link>
                 </div>
 
