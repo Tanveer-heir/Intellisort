@@ -53,33 +53,33 @@
   ],
   "accordion": [
     {
-      "title": "What is CookBot? How does it work?",
-      "desc": "CookBot is an AI-powered platform that analyzes your available ingredients and suggests delightful dishes. Just input what you have, and our AI will generate personalized recipes for you!",
+      "title": "What is Intellisort? How does it work?",
+      "desc": "Intellisort is an AI-powered platform that analyzes your waste and provides efficient sorting and disposal solutions. Just input the type of waste or take a picture of it, and our AI will generate personalized disposal instructions for you!",
       "isExpand": true
     },
     {
-      "title": "What kind of recipes can I get?",
-      "desc": "CookBot offers a wide range of recipes, from appetizers to desserts. Whether you're in the mood for something quick and easy or looking to try a new cuisine, we've got you covered.",
+      "title": "Why should I use Intellisort?",
+      "desc": "Using Intellisort makes waste management effortless and eco-friendly. It helps you reduce waste, recycle efficiently, and make sustainable choices.",
       "isExpand": false
     },
     {
-      "title": "Can I trust the nutritional information provided?",
-      "desc": "Yes, CookBot provides accurate nutritional information for every recipe, helping you make informed choices about your meals.",
+      "title": "Is Intellisort easy to use?",
+      "desc": "Absolutely! Intellisort is designed to be user-friendly. Just enter the type of waste you have or snap a photo, and get instant, easy-to-follow sorting and disposal suggestions.",
       "isExpand": false
     },
     {
       "title": "Is this AI a high school project?",
-      "desc": "Yes, CookBot was developed as part of a high school initiative. We're proud of our student team for creating such a useful tool.",
+      "desc": "Yes, Intellisort was developed as part of a high school initiative. We're proud of our student team for creating such a useful tool.",
       "isExpand": false
     },
     {
-      "title": "Is my data safe with CookBot?",
-      "desc": "Absolutely! We prioritize your privacy and ensure that your data is secure and only used to improve your experience.",
+      "title": "How does Intellisort contribute to the environment?",
+      "desc": "By using Intellisort, you ensure that waste is disposed of correctly, reducing landfill use and promoting recycling. This helps conserve resources and lower carbon footprints.",
       "isExpand": false
     },
     {
-      "title": "Is CookBot available in multiple languages?",
-      "desc": "No, CookBot does not support multiple languages, only English.",
+      "title": "Is Intellisort available in multiple languages?",
+      "desc": "No, Intellisort does not support multiple languages, only English.",
       "isExpand": false
     }
   ]

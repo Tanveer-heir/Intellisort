@@ -28,7 +28,7 @@ const Split = () => {
                       data-sal-duration="400"
                       data-sal-delay="200"
                     >
-                      Effortless Recipe AI
+                      Eco Solutions
                     </h4>
                     <p
                       className="description"
@@ -36,7 +36,7 @@ const Split = () => {
                       data-sal-duration="400"
                       data-sal-delay="300"
                     >
-                      Unlock Culinary Delights: Custom Recipes, Nutritional Info, Cooking Instructions, Ingredient Tracking, and Beyond.
+                      Unlock Eco-Friendly Solutions: Smart Sorting, Waste Reduction Tips, Environmental Impact Insights, and Beyond.
                     </p>
                     <ul
                       className="split-list"
@@ -44,9 +44,9 @@ const Split = () => {
                       data-sal-duration="400"
                       data-sal-delay="350"
                     >
-                      <li>- Discover Dishes in Under 20 Seconds.</li>
-                      <li>- Reclaim Hours in the Kitchen with AI.</li>
-                      <li>- Master Cooking with Our Step-by-Step Guide.</li>
+                      <li>- Optimize Waste in Under 20 Seconds.</li>
+                      <li>- Reclaim Hours with Efficient Disposal.</li>
+                      <li>- Master Sustainability with Our Step-by-Step Guide.</li>
                     </ul>
                     <div
                       className="view-more-button mt--35"
@@ -55,7 +55,7 @@ const Split = () => {
                       data-sal-delay="400"
                     >
                       <Link className="btn-default" href="/text-generator">
-                        Get Cooking!
+                        Let's Clean Up!
                       </Link>
                     </div>
                   </div>
