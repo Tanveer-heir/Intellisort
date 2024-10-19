@@ -37,7 +37,7 @@ const Footer = () => {
                     </Link>
                   </div>
                   <p className="b1 text-center mt--20 mb--0">
-                    Use Now and Make Culinary Magic Happen!
+                    Get Started and Transform Waste Today!
                   </p>
                 </div>
               </div>
@@ -49,9 +49,9 @@ const Footer = () => {
                   <div className="row">
                     <div className="col-lg-8 col-md-6 col-sm-12 col-12">
                       <div className="rainbow-footer-widget">
-                        <h4 className="title">{"CookBot"}</h4>
+                        <h4 className="title">{"Intellisort"}</h4>
                         <div className="inner">
-                          <h6 className="subtitle">{"AI Recipes Redefined. Elevate Your Meals Effortlessly."}</h6>
+                          <h6 className="subtitle">{"AI Waste Solutions. Simplify Your Disposal."}</h6>
                         </div>
                       </div>
                     </div>
@@ -61,7 +61,7 @@ const Footer = () => {
                           <h4 className="title">{"Contact Us"}</h4>
                           <div className="inner">
                             <h6 className="subtitle">{"Have questions or feedback? Reach out to us!"}</h6>
-                            <p>Email: <a href="mailto:support@cookbot.com">gurkiratsingh613@themillenniumschoolsasr.com</a></p>
+                            <p>Email: <a href="mailto:gurkiratkhaira11@gmail.com">gurkiratkhaira11@gmail.com</a></p>
                           </div>
                         </div>
                       </div>
