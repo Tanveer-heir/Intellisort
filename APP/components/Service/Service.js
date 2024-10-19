@@ -34,13 +34,13 @@ const Service = () => {
                 data-sal-delay="100"
               >
                 <h4 className="subtitle">
-                  <span className="theme-gradient">GET COOKING LIKE A PROFESSIONAL</span>
+                  <span className="theme-gradient">GET WASTE-SORTING LIKE A PRO</span>
                 </h4>
                 <h2 className="title w-600 mb--20">
-                  Instant Recipe Enchantment
+                  Instant Eco-Solutions
                 </h2>
                 <p className="description b1">
-                  Provide Ingredients, Get Instant AI-Generated Recipes Tailored To Your Pantry.
+                  Dispose Smartly with AI-Powered Guidance Tailored to Your Needs.
                 </p>
               </div>
             </div>

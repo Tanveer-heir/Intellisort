@@ -1,54 +1,54 @@
 {
   "service": [
     {
-      "title": "Effortless Recipe AI",
-      "desc": "Let Our AI-powered CookBot analyzes your available ingredients and suggests delightful dishes.",
+      "title": "Effortless Waste Sorting",
+      "desc": "Let our AI-powered Intellisort analyze your waste and suggest the best recycling solutions.",
       "icon": "activity",
       "delay": 100
     },
     {
-      "title": "Your Words, Our Culinary Magic",
-      "desc": "Discover how our AI-powered CookBot transforms your kitchen adventures into delectable dishes.",
+      "title": "Your Waste, Our Mission",
+      "desc": "Discover how our AI-powered Intellisort transforms your waste management into efficient, eco-friendly practices.",
       "icon": "cast",
       "delay": 100
     },
     {
-      "title": "AI-Powered Culinary Adventures",
-      "desc": "From pantry to gourmet delights, our convenient service suggests mouthwatering recipes.",
+      "title": "AI-Powered Management",
+      "desc": "From sorting to recycling, our service provides seamless waste management solutions.",
       "icon": "map",
       "delay": 200
     },
     {
-      "title": "Seamless Meal Planning",
-      "desc": "Simplify your cooking routine with personalized, easy to follow recipes.",
+      "title": "Seamless Waste Disposal",
+      "desc": "Simplify your waste management routine with personalized, easy-to-follow guidelines.",
       "icon": "loader",
       "delay": 100
     },
     {
-      "title": "Nutritional Insights at Fingertips",
-      "desc": "Stay informed with detailed nutritional information for every recipe.",
+      "title": "Eco Insights at Fingertips",
+      "desc": "Stay informed with detailed environmental impact for every disposal decision.",
       "icon": "speaker",
       "delay": 100
     },
     {
-      "title": "Discover New Flavors",
-      "desc": "From appetizers to desserts, explore a world of recipes tailored to your taste.",
+      "title": "Eco-Friendly Practices",
+      "desc": "From recycling to composting, explore a world of waste management tailored to your needs.",
       "icon": "loader",
       "delay": 200
     }
   ],
   "timeline": [
     {
-      "title": "1.Input Your Ingredients",
-      "desc": "Simply enter the ingredients you have on hand and let our AI do the rest."
+      "title": "1.Input Your Waste",
+      "desc": "Simply enter or take picture of the type of waste you have, and let our AI do the rest."
     },
     {
-      "title": "2.Get Recipe Suggestions",
-      "desc": "Our AI analyzes your ingredients and suggests a variety of delicious recipes."
+      "title": "2.Get Sorting Suggestions",
+      "desc": "Our AI analyzes your waste and suggests the best recycling and disposal methods."
     },
     {
-      "title": "3.Start Cooking",
-      "desc": "Follow the step-by-step instructions to create dishes with ease."
+      "title": "3.Dispose Smartly",
+      "desc": "Follow the step-by-step instructions to manage your waste efficiently."
     }
   ],
   "accordion": [

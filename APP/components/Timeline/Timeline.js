@@ -33,7 +33,7 @@ const Timeline = () => {
                   <span className="theme-gradient">HOW IT WORKS</span>
                 </h4>
                 <h2 className="title w-600 mb--20">
-                  Guide Our AI to Create Your Recipe
+                  Guide Our AI to Manage Your Waste
                 </h2>
               </div>
             </div>
@@ -80,7 +80,7 @@ const Timeline = () => {
               </div>
               <div className="button-group mt--50 text-center">
                 <Link className="btn-default btn-large" href="/text-generator">
-                  Get Cooking!
+                  Let's Clean Up!
                 </Link>
                 <Link
                   className="btn-default btn-large btn-border popup-video"
