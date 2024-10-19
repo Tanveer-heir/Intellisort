@@ -62,6 +62,7 @@ const Footer = () => {
                           <div className="inner">
                             <h6 className="subtitle">{"Have questions or feedback? Reach out to us!"}</h6>
                             <p>Email: <a href="mailto:gurkiratkhaira11@gmail.com">gurkiratkhaira11@gmail.com</a></p>
+                            <p>Email: <a href="mailto:tanveer-di-mail">tanveer-di-mail</a></p>
                           </div>
                         </div>
                       </div>
