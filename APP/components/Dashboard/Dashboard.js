@@ -45,15 +45,15 @@ const Dashboard = () => {
                     data-sal-delay="100"
                   >
                     <h4 className="subtitle ">
-                      <span className="theme-gradient">CookBot</span>
+                      <span className="theme-gradient">Intellisort</span>
                     </h4>
                     <h2 className="title w-600 mb--20">
-                      Unleashing the Power of AI-Powered Cooking
+                      Unleashing the Power of AI-Powered Waste Management
                     </h2>
                     <p className="description b1">
-                      Master Your Kitchen with Personalized Recipes{" "}
+                      Master Your Recycling with Intellisort's Personalized Solutions{" "}
                       <br />
-                      Pioneering the Future of Home Cooking.
+                      Pioneering the Future of Waste Management.
                     </p>
                   </div>
                   <div className="genarator-section">

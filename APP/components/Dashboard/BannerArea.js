@@ -48,8 +48,8 @@ const BannerArea = () => {
         <div className="chatenai-small-slider slide-single-layout">
           <div className="inner bg-four">
             <div className="content">
-              <h4 className="title">Elevate Your Culinary Game</h4>
-              <p className="desc">Discover recipes with CookBot</p>
+              <h4 className="title">AI Waste Solutions</h4>
+              <p className="desc">Reclaim Hours with Efficient Disposal</p>
             </div>
             <div className="img-section">
               <Image src={img2} width={350} height={165} alt="sm slider img" />
