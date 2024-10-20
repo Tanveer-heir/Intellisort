@@ -28,7 +28,7 @@ const BannerArea = () => {
               <p className="desc">Harness the power of AI for every challenge</p>
             </div>
             <div className="img-section">
-              <Image src={img1} width={480} height={165} alt="sm slider img" />
+              <Image src={img1} width={450} height={400} alt="sm slider img" />
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@ const BannerArea = () => {
               </p>
             </div>
             <div className="img-section">
-              <Image src={img3} width={390} height={165} alt="sm slider img" />
+              <Image src={img1} width={450} height={400} alt="sm slider img" />
             </div>
           </div>
         </div>
@@ -52,7 +52,7 @@ const BannerArea = () => {
               <p className="desc">Reclaim Hours with Efficient Disposal</p>
             </div>
             <div className="img-section">
-              <Image src={img2} width={350} height={165} alt="sm slider img" />
+              <Image src={img1} width={450} height={400} alt="sm slider img" />
             </div>
           </div>
         </div>
