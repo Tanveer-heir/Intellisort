@@ -92,8 +92,8 @@ const Page = () => {
             <h1 className="flex items-start justify-start mb-7 text-3xl font-bold text-start">Scan Waste</h1>
             {!cameraStarted ? (
                 <div className="flex flex-col items-center">
-                    <p className="mb-4 text-lg">To start scanning your waste, click the button below to open the camera.</p>
-                    <button onClick={() => { setCameraStarted(true); startCamera(); }} className="bg-green-600 w-40 h-12 rounded-full flex items-center justify-center text-white text-lg font-bold">
+                    <p className="mb-4 text-lg">To start scanning, click the button below to open the camera.</p>
+                    <button onClick={() => { setCameraStarted(true); startCamera(); }} className="btn-default btn-small round">
                         Open Camera
                     </button>
                 </div>
