@@ -19,6 +19,32 @@ const Page = () => {
   const [aiData, setAiData] = useState(null);
   const [demo, setDemo] = useState(null);
   const [cameraStarted, setCameraStarted] = useState(false);
+  const [dimensions, setDimensions] = useState({ width: '100%', height: '400px' });
+
+  const updateDimensions = () => {
+    if (window.innerWidth <= 768) { // Mobile devices
+      setDimensions({
+        width: '100%',
+        height: '300px'
+      });
+    } else if (window.innerWidth <= 1024) { // Tablets
+      setDimensions({
+        width: '100%',
+        height: '400px'
+      });
+    } else { // Desktop
+      setDimensions({
+        width: '100%',
+        height: '500px'
+      });
+    }
+  };
+
+  useEffect(() => {
+    updateDimensions();
+    window.addEventListener('resize', updateDimensions);
+    return () => window.removeEventListener('resize', updateDimensions);
+  }, []);
 
   const startCamera = async () => {
     try {
@@ -55,7 +81,7 @@ const Page = () => {
       setaiLoading(true);
       const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI_API_KEY);
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro", safetySettings: safetySettings });
-      const prompt = "Does this look like a recyclable or non recyclable waste to you? Send the % of probability, only with two decimals. Don't send 'yes' or 'no' text, only %. Send both the % of how much it's recyclable and how much it's non-recyclable. Also, tell the type of waste like dry waste, wet waste etc., and detect the type of material used in the waste, give a relevant name to the waste and total count of waste too. Send response in a json type without ``` or extra anything – pure keys and values in json.";
+      const prompt = "Does this look like a recyclable or non recyclable waste to you? Send the % of probability, only with two decimals. Don't send 'yes' or 'no' text, only %. Send both the % of how much it's recyclable and how much it's non-recyclable. Also, tell the type of waste like dry waste , wet waste etc., and detect the type of material used in the waste, give a relevant name to the waste and total count of waste too. Send response in a json type without ``` or extra anything – pure keys and values in json.";
       const formatMatch = photoData.match(/^data:(image\/(\w+));base64,/);
       if (!formatMatch) {
         console.error("Unsupported image format");
@@ -99,28 +125,50 @@ const Page = () => {
           align-items: center;
           min-height: 40vh;
           box-sizing: border-box;
-          padding: 40px;
+          padding: 20px;
           overflow: hidden;
-        }
-        .button-container {
-          display: flex;
-          justify-content: center;
-          margin-top: 1rem;
+          width: 100%;
+          max-width: 1200px;
+          margin: 0 auto;
         }
         .content {
           text-align: center;
+          width: 100%;
+          margin-bottom: 2rem;
+        }
+        .video-container {
+          width: 100%;
+          max-width: ${dimensions.width};
+          margin: 0 auto;
         }
         .video-border {
           border: 7px solid #4c63cd;
           border-radius: 16px;
+          width: 100%;
+          height: ${dimensions.height};
+          object-fit: cover;
+        }
+        .button-container {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+        @media (max-width: 768px) {
+          .centered-container {
+            padding: 10px;
+          }
         }
       `}</style>
 
       <div className="centered-container">
         {!cameraStarted && (
           <div className="content">
-            <h1 className="text-3xl font-bold mb-2">Scan Waste</h1>
-            <p className="text-lg mb-4">To start scanning, click the button below to open the camera.</p>
+            <h1 className="text-3xl font-bold mb-4">Scan Waste</h1>
+            <p className="text-lg mb-4">
+              To start scanning, click the button below to open the camera.
+            </p>
           </div>
         )}
         <div className="button-container">
@@ -136,14 +184,24 @@ const Page = () => {
             </button>
           ) : (
             <>
-              <div>
+              <div className="video-container">
                 {loading ? (
                   <div
                     className="w-full rounded-lg relative animate-pulse bg-black/80"
-                    style={{ height: "400px", borderRadius: "50px" }}
+                    style={{ height: dimensions.height, borderRadius: "16px" }}
                   />
                 ) : (
-                  <video ref={videoRef} autoPlay muted className="w-full rounded-lg relative h-96 video-border" />
+                  <video
+                    ref={videoRef}
+                    autoPlay
+                    muted
+                    className="video-border"
+                    style={{
+                      objectFit: 'cover',
+                      width: '100%',
+                      height: dimensions.height
+                    }}
+                  />
                 )}
                 <button
                   onClick={capturePhoto}
