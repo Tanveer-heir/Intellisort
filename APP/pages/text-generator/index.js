@@ -20,7 +20,6 @@ const TextGeneratorPage = () => {
             <HeaderDashboard display="" />
             <PopupMobileMenu />
             <LeftpanelDashboard />
-            <RightpanelDashboard />
             <Modal />
 
             <div className="rbt-main-content">
@@ -29,7 +28,6 @@ const TextGeneratorPage = () => {
                   <div className="content-page">
                     <TextGenerator />
                   </div>
-                  <StaticbarDashboard />
                 </div>
               </div>
             </div>
