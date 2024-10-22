@@ -30,6 +30,8 @@ const Page = () => {
     } catch (err) {
       Toast.ErrorShowToast("Error accessing camera");
       console.error("Error accessing camera:", err);
+      alert("No video feed detected. Please ensure your camera is connected and allowed in browser settings.");
+      location.reload();
     }
   };
 
