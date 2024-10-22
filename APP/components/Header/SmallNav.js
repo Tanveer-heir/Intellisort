@@ -18,12 +18,6 @@ const SmallNav = () => {
               <span>Welcome</span>
             </Link>
           </li>
-          <li>
-            <Link href="/plans-billing">
-              <i className="feather-briefcase"></i>
-              <span>Manage Subsription</span>
-            </Link>
-          </li>
         </ul>
         <div className="rbt-sm-separator"></div>
         <ul className="dashboard-mainmenu rbt-default-sidebar-list">
@@ -61,60 +55,6 @@ const SmallNav = () => {
             ))}
         </ul>
         <div className="rbt-sm-separator"></div>
-        <div className="mainmenu-nav">
-          <ul className="dashboard-mainmenu rbt-default-sidebar-list">
-            <li className="has-submenu">
-              <a
-                className="collapse-btn collapsed"
-                data-bs-toggle="collapse"
-                href="#collapseExampleMenu"
-                role="button"
-                aria-expanded="false"
-                aria-controls="collapseExampleMenu"
-              >
-                <i className="feather-plus-circle"></i>
-                <span>Setting</span>
-              </a>
-              <div className="collapse" id="collapseExampleMenu">
-                <ul className="submenu rbt-default-sidebar-list">
-                  {SmallNavItem &&
-                    SmallNavItem.smallNavItem
-                      .slice(7, 14)
-                      .map((data, index) => (
-                        <li key={index}>
-                          <Link href={data.link}>
-                            <i className={`feather-${data.icon}`}></i>
-                            <span>{data.text}</span>
-                          </Link>
-                        </li>
-                      ))}
-                </ul>
-              </div>
-            </li>
-            <li>
-              <a href="#">
-                <i className="feather-award"></i>
-                <span>Help & FAQ</span>
-              </a>
-            </li>
-          </ul>
-
-          <div className="rbt-sm-separator"></div>
-          <ul className="dashboard-mainmenu rbt-default-sidebar-list">
-            <li>
-              <Link href="/release-notes">
-                <i className="feather-bell"></i>
-                <span>Release notes</span>
-              </Link>
-            </li>
-            <li>
-              <Link href="/terms-policy">
-                <i className="feather-briefcase"></i>
-                <span>Terms & Policy</span>
-              </Link>
-            </li>
-          </ul>
-        </div>
       </nav>
     </>
   );

@@ -61,9 +61,6 @@ const PopupMobileMenu = () => {
             </div>
           </div>
           <div className="content">
-            <Nav />
-
-            <div className="rbt-sm-separator"></div>
             <div className="rbt-default-sidebar-wrapper">
               <SmallNav />
             </div>
