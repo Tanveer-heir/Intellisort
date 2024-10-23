@@ -13,7 +13,6 @@ const safetySettings = [
 const formatAiResponse = (data) => {
   try {
     const parsedData = JSON.parse(data);
-    console.log("Raw AI Response:", parsedData); // Log the raw AI response
 
     // Directly extract values from parsedData
     const wasteName = parsedData.waste_name || parsedData.name || "UNKNOWN WASTE";
@@ -156,7 +155,7 @@ const Page = () => {
   };
 
   useEffect(() => {
-    if (photoData) {
+    if (photoData && !aiData) {
       scanImage();
     }
   }, [photoData]);
@@ -205,7 +204,7 @@ const Page = () => {
           position: fixed;
           top: 0;
           left: 0;
-          width: 100%;
+          width:  100%;
           height: 100vh;
           background-color: rgba(0, 0, 0, 0.5);
           display: flex;
@@ -225,7 +224,7 @@ const Page = () => {
           font-weight: bold;
           margin-bottom: 10px;
         }
-        .prob abilities {
+        .probabilities {
           display: flex;
           justify-content: space-between;
           margin-bottom: 10px;
@@ -303,7 +302,6 @@ const Page = () => {
                 <button
                   onClick={() => {
                     capturePhoto();
-                    setAiLoading(true);
                   }}
                   className="btn-default btn-small round button"
                 >
