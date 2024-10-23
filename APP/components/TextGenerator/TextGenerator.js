@@ -14,20 +14,42 @@ const formatAiResponse = (data) => {
   try {
     const parsedData = JSON.parse(data);
     console.log("Raw AI Response:", parsedData); // Log the raw AI response
+
+    // Directly extract values from parsedData
+    const wasteName = parsedData.waste_name || parsedData.name || "UNKNOWN WASTE";
+    const recyclableProbability = parseFloat(parsedData.recyclable_probability) || 0; // Convert to float
+    const nonRecyclableProbability = parseFloat(parsedData.non_recyclable_probability) || 0; // Convert to float
+    const wasteType = parsedData.waste_type || parsedData.type_of_waste || "UNKNOWN TYPE";
+    const material = parsedData.material || parsedData.material_type || "UNKNOWN MATERIAL";
+    const count = parseInt(parsedData.count) || 0; // Convert to integer
+
+    // Handle recycling_steps: check if it's a string and split if necessary
+    let recyclingSteps = [];
+    if (typeof parsedData.recycling_steps === 'string') {
+      // Check if the string contains numbered steps
+      if (/^\d+\.\s/.test(parsedData.recycling_steps)) {
+        recyclingSteps = parsedData.recycling_steps.split(/\d+\.\s+/).slice(1).map(step => step.trim()).filter(step => step);
+      } else {
+        recyclingSteps = [parsedData.recycling_steps.trim()]; // Treat as a single step if not numbered
+      }
+    } else {
+      recyclingSteps = parsedData.recycling_steps || []; // Fallback to empty array if not found
+    }
+
     return (
       <div className="ai-response">
-        <h2 className="waste-name">{parsedData.waste_name} ♻️</h2>
+        <h2 className="waste-name">{wasteName.toUpperCase()} ♻️</h2>
         <div className="probabilities">
-          <p><strong>Recyclable Probability:</strong> {parsedData.recyclable_probability} % 🌱</p>
-          <p><strong>Non-Recyclable Probability:</strong> {parsedData.non_recyclable_probability} % 🚫</p>
+          <p><strong>Recyclable Probability:</strong> {recyclableProbability.toFixed(2)} % 🌱</p>
+          <p><strong>Non-Recyclable Probability:</strong> {nonRecyclableProbability.toFixed(2)} % 🚫</p>
         </div>
         <div className="waste-type-material">
-          <p><strong>Type of Waste:</strong> {parsedData.waste_type} | <strong>Material Used:</strong> {parsedData.material} 🏷️</p>
+          <p><strong>Type of Waste:</strong> {wasteType} | <strong>Material Used:</strong> {material} 🏷️</p>
         </div>
-        <p><strong>Total Count of Waste:</strong> {parsedData.count} 🗑️</p>
+        <p><strong>Total Count of Waste:</strong> {count} 🗑️</p>
         <p><strong>Steps to Recycle:</strong></p>
         <ul>
-          {parsedData.recycling_steps.map((step, index) => (
+          {recyclingSteps.map((step, index) => (
             <li key={index}>🔄 {step}</li>
           ))}
         </ul>
@@ -93,9 +115,9 @@ const Page = () => {
       const video = videoRef.current;
       const canvas = document.createElement("canvas");
       canvas.width = video.videoWidth;
-      canvas .height = video.videoHeight;
+      canvas.height = video.videoHeight;
       const ctx = canvas.getContext("2d");
-      if ( ctx) {
+      if (ctx) {
         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
         const dataURL = canvas.toDataURL("image/jpeg");
         setPhotoData(dataURL);
@@ -108,7 +130,7 @@ const Page = () => {
       setAiLoading(true);
       const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI_API_KEY);
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro", safetySettings: safetySettings });
-      const prompt = "Does this look like a recyclable or non recyclable waste to you? Send the % of probability, only with two decimals. Don't send 'yes' or 'no' text, only %. Send both the % of how much it's recyclable and how much it's non-recyclable. Also, tell the type of waste like dry waste , wet waste etc., and detect the type of material used in the waste, give a relevant name to the waste and total count of waste and steps to recycle it too. Send response in a json type without ``` or extra anything – pure keys and values in json.";
+      const prompt = "Does this look like a recyclable or non recyclable waste to you? Send the % of probability, only with two decimals. Don't send 'yes' or 'no' text, only %. Send both the % of how much it's recyclable and how much it's non-recyclable. Also, tell the type of waste like dry waste , wet waste etc., and detect the type of material used in the waste, give a relevant name to the waste and total count of waste and steps to recycle it too. Send response in a json type without ``` or extra anything – pure keys and values in json and use only these values for the description waste_name, recyclable_probability, non_recyclable_probability, waste_type, material, count, recycling_steps"
       const formatMatch = photoData.match(/^data:(image\/(\w+));base64,/);
       if (!formatMatch) {
         console.error("Unsupported image format");
@@ -191,7 +213,7 @@ const Page = () => {
           align-items: center;
         }
         .ai-response {
-          background-color: #34C759;
+          background-color: #34 C759;
           padding: 20px;
           border-radius: 16px;
           width: 100%;
@@ -203,7 +225,7 @@ const Page = () => {
           font-weight: bold;
           margin-bottom: 10px;
         }
-        .probabilities {
+        .prob abilities {
           display: flex;
           justify-content: space-between;
           margin-bottom: 10px;
