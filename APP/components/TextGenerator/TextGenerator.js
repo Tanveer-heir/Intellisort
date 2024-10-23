@@ -22,21 +22,12 @@ const Page = () => {
   const [dimensions, setDimensions] = useState({ width: '100%', height: '400px' });
 
   const updateDimensions = () => {
-    if (window.innerWidth <= 768) { // Mobile devices
-      setDimensions({
-        width: '100%',
-        height: '300px'
-      });
-    } else if (window.innerWidth <= 1024) { // Tablets
-      setDimensions({
-        width: '100%',
-        height: '400px'
-      });
-    } else { // Desktop
-      setDimensions({
-        width: '100%',
-        height: '500px'
-      });
+    if (window.innerWidth <= 768) {
+      setDimensions({ width: '100%', height: '300px' });
+    } else if (window.innerWidth <= 1024) {
+      setDimensions({ width: '100%', height: '400px' });
+    } else {
+      setDimensions({ width: '100%', height: '500px' });
     }
   };
 
@@ -95,7 +86,7 @@ const Page = () => {
         },
       };
       const result = await model.generateContent([prompt, image]);
-      const jsonString = result.response.text().replace(/```json([\s\S]*?)```/, "$1");
+      const jsonString = result.response.text(). replace(/```json([\s\S]*?)```/, "$1");
       const parsedJson = JSON.parse(jsonString);
       setDemo(result.response.text());
       console.log(parsedJson);
@@ -184,6 +175,7 @@ const Page = () => {
             </button>
           ) : (
             <>
+              <h2>Aim The Camera At The Waste</h2>
               <div className="video-container">
                 {loading ? (
                   <div
@@ -203,15 +195,13 @@ const Page = () => {
                     }}
                   />
                 )}
-                <button
-                  onClick={capturePhoto}
-                  className="bg-green-600 w-16 h-16 m-auto rounded-full flex gap-3 items-center text-center justify-center text-3xl font-bold text-white mt-4 p-4"
-                >
-                  <div className="flex flex-col gap-3">
-                    <Scan size={40} />
-                  </div>
-                </button>
               </div>
+              <button
+                onClick={capturePhoto}
+                className="btn-default btn-small round"
+              >
+                Submit
+              </button>
               {aiLoading ? (
                 <div className="bg-black/80 w-full min-h-screen fixed left-0 right-0 top-0">
                   <div className="flex justify-center items-center min-h-screen">
@@ -231,7 +221,7 @@ const Page = () => {
                         <h1 className="text-lg font-bold">Dry Waste: {aiData.dry_waste || "unknown"}</h1>
                         <h1 className="text-lg font-bold">Total Waste: {aiData.total_count || "0"}</h1>
                         <h1 className="text-lg font-bold">Wet Waste: {aiData.wet_waste || 0}</h1>
-                        {aiData.material && <h1 className="text-lg font-bold capitalize">Material: {aiData.material.replace(/_/g, " ")}</h1>}
+                        {aiData.material && < h1 className="text-lg font-bold capitalize">Material: {aiData.material.replace(/_/g, " ")}</h1>}
                         {demo}
                       </div>
                     </div>
