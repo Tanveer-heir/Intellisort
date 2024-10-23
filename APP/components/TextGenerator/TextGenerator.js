@@ -109,6 +109,12 @@ const Page = () => {
     }
   };
 
+  useEffect(() => {
+    return () => {
+      stopCamera();
+    };
+  }, []);
+
   const capturePhoto = () => {
     if (videoRef.current) {
       const video = videoRef.current;
@@ -202,9 +208,9 @@ const Page = () => {
         }
         .loading-overlay {
           position: fixed;
-          top: 0;
+          top:  0;
           left: 0;
-          width:  100%;
+          width: 100%;
           height: 100vh;
           background-color: rgba(0, 0, 0, 0.5);
           display: flex;
@@ -278,7 +284,7 @@ const Page = () => {
               </button>
             ) : (
               <>
-                <h2>Point the camera on the waste and click submit</h2>
+                <h2>Aim The Camera At The Waste</h2>
                 <div className="video-container">
                   {loading ? (
                     <div
