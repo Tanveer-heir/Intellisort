@@ -10,6 +10,35 @@ const safetySettings = [
   { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_NONE },
 ];
 
+const formatAiResponse = (data) => {
+  try {
+    const parsedData = JSON.parse(data);
+    console.log("Raw AI Response:", parsedData); // Log the raw AI response
+    return (
+      <div className="ai-response">
+        <h2 className="waste-name">{parsedData.waste_name} ♻️</h2>
+        <div className="probabilities">
+          <p><strong>Recyclable Probability:</strong> {parsedData.recyclable_probability} % 🌱</p>
+          <p><strong>Non-Recyclable Probability:</strong> {parsedData.non_recyclable_probability} % 🚫</p>
+        </div>
+        <div className="waste-type-material">
+          <p><strong>Type of Waste:</strong> {parsedData.waste_type} | <strong>Material Used:</strong> {parsedData.material} 🏷️</p>
+        </div>
+        <p><strong>Total Count of Waste:</strong> {parsedData.count} 🗑️</p>
+        <p><strong>Steps to Recycle:</strong></p>
+        <ul>
+          {parsedData.recycling_steps.map((step, index) => (
+            <li key={index}>🔄 {step}</li>
+          ))}
+        </ul>
+      </div>
+    );
+  } catch (error) {
+    console.error("Error parsing AI response:", error);
+    return <p>Error displaying AI response.</p>;
+  }
+};
+
 const Page = () => {
   const videoRef = useRef(null);
   const [photoData, setPhotoData] = useState(null);
@@ -18,7 +47,7 @@ const Page = () => {
   const [aiData, setAiData] = useState(null);
   const [cameraStarted, setCameraStarted] = useState(false);
   const [dimensions, setDimensions] = useState({ width: '100%', height: '400px' });
-  const [mediaStream, setMediaStream] = useState(null); // Store the media stream
+  const [mediaStream, setMediaStream] = useState(null);
 
   const updateDimensions = () => {
     if (window.innerWidth <= 768) {
@@ -42,7 +71,7 @@ const Page = () => {
       if (videoRef.current) {
         setLoading(false);
         videoRef.current.srcObject = stream;
-        setMediaStream(stream); // Save the media stream
+        setMediaStream(stream);
       }
     } catch (err) {
       Toast.ErrorShowToast("Error accessing camera");
@@ -54,8 +83,8 @@ const Page = () => {
 
   const stopCamera = () => {
     if (mediaStream) {
-      mediaStream.getTracks().forEach(track => track.stop()); // Stop all tracks
-      setMediaStream(null); // Clear the media stream
+      mediaStream.getTracks().forEach(track => track.stop());
+      setMediaStream(null);
     }
   };
 
@@ -64,9 +93,9 @@ const Page = () => {
       const video = videoRef.current;
       const canvas = document.createElement("canvas");
       canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
+      canvas .height = video.videoHeight;
       const ctx = canvas.getContext("2d");
-      if (ctx) {
+      if ( ctx) {
         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
         const dataURL = canvas.toDataURL("image/jpeg");
         setPhotoData(dataURL);
@@ -87,20 +116,20 @@ const Page = () => {
         return;
       }
       const image = {
-        inlineData : {
+        inlineData: {
           data: photoData.replace(formatMatch[0], ""),
           mimeType: "image/jpeg",
         },
       };
       const result = await model.generateContent([prompt, image]);
       const jsonString = result.response.text().replace(/```json([\s\S]*?)```/, "$1");
-      setAiData(jsonString); // Store the raw response from Gemini
+      setAiData(jsonString);
     } catch (err) {
       console.error("Error scanning image:", err);
       alert("Error scanning image" + err);
     } finally {
       setAiLoading(false);
-      stopCamera(); // Stop the camera when AI data is received
+      stopCamera();
     }
   };
 
@@ -161,6 +190,33 @@ const Page = () => {
           justify-content: center;
           align-items: center;
         }
+        .ai-response {
+          background-color: #34C759;
+          padding: 20px;
+          border-radius: 16px;
+          width: 100%;
+          max-width: 400px;
+          margin: 0 auto;
+        }
+        .waste-name {
+          font-size: 24px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        .probabilities {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 10px;
+        }
+        .waste-type-material {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 10px;
+        }
+        .button {
+          margin: 10px auto;
+          display: block;
+        }
         @media (max-width: 768px) {
           .centered-container {
             padding: 10px;
@@ -179,7 +235,13 @@ const Page = () => {
         )}
         {aiData ? (
           <div>
-            <pre>{aiData}</pre>
+            {formatAiResponse(aiData)}
+            <button
+              onClick={() => location.reload()}
+              className="btn-default btn-small round button"
+            >
+              Scan More 📸
+            </button>
           </div>
         ) : (
           <div className="button-container">
@@ -189,7 +251,7 @@ const Page = () => {
                   setCameraStarted(true);
                   startCamera();
                 }}
-                className="btn-default btn-small round"
+                className="btn-default btn-small round button"
               >
                 Open Camera
               </button>
@@ -221,7 +283,7 @@ const Page = () => {
                     capturePhoto();
                     setAiLoading(true);
                   }}
-                  className="btn-default btn-small round"
+                  className="btn-default btn-small round button"
                 >
                   Submit
                 </button>
