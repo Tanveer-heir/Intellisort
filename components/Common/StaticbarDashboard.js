@@ -8,7 +8,7 @@ const StaticbarDashboard = () => {
         <Form />
 
         <p className="b3 small-text">
-          ChatenAi can make mistakes. Consider checking important information.
+          Ai can make mistakes. Consider checking important information.
         </p>
       </div>
     </>

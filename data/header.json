@@ -140,7 +140,7 @@
       "link": "/text-generator",
       "isDisable": false,
       "type": "default",
-      "img": "/images/generator-icon/text.png",
+      "img": "/Intellisort/images/generator-icon/text.png",
       "text": "Text Generator",
       "badge": "",
       "icon": ""
@@ -151,7 +151,7 @@
       "link": "/text-generator",
       "isDisable": false,
       "title": "Waste Management",
-      "img": "/images/generator-icon/text.png",
+      "img": "/Intellisort/images/generator-icon/text.png",
       "badge": ""
     }
   ]
