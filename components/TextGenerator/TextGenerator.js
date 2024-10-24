@@ -133,8 +133,7 @@ const Page = () => {
   const scanImage = async () => {
     try {
       setAiLoading(true);
-      console.log(process.env.NEXT_PUBLIC_APIKEY)
-      const genAI = new GoogleGenerativeAI(process.env.APIKEY);
+      const genAI = new GoogleGenerativeAI("AIzaSyAgkEo5dCv4AHedgN5qyKyqzlovaoYTmPM");
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro", safetySettings: safetySettings });
       const prompt = "Does this look like a recyclable or non recyclable waste to you? Send the % of probability, only with two decimals. Don't send 'yes' or 'no' text, only %. Send both the % of how much it's recyclable and how much it's non-recyclable. Also, tell the type of waste like dry waste , wet waste etc., and detect the type of material used in the waste, give a relevant name to the waste and total count of waste and steps to recycle it too. Send response in a json type without ``` or extra anything – pure keys and values in json and use only these values for the description waste_name, recyclable_probability, non_recyclable_probability, waste_type, material, count, recycling_steps"
       const formatMatch = photoData.match(/^data:(image\/(\w+));base64,/);
